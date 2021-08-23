@@ -10,13 +10,11 @@ public class GameMain {
 	public static void main(String[] args) {
 		System.out.println("Welcome to snake and ladder game!");
 		int pos = 0; // start position
-		 
 		Random rand = new Random();
-		int die_number = rand.nextInt(7-1)+1; // random number between 1-6
-		System.out.println("Dies number is :"+ die_number);
-		
-		int choice = rand.nextInt(4-1)+1;
-		
+		while(pos != 100) {
+			int die_number = rand.nextInt(7-1)+1; // random number between 1-6
+			System.out.println("Dies number is :"+ die_number);
+			int choice = rand.nextInt(4-1)+1;
 		switch (choice) {
 		case No_Play :
 			System.out.println("No play, please roll again");
@@ -31,6 +29,10 @@ public class GameMain {
 			pos-=die_number;
 			System.out.println("Current position is "+pos);
 			break;
+		}
+		if (pos < 0)
+			pos =0;
+			System.out.println("Position reset to 0!!");
 		}
 
 	}
