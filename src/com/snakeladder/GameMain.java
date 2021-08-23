@@ -30,9 +30,15 @@ public class GameMain {
 			System.out.println("Current position is "+pos);
 			break;
 		}
-		if (pos < 0)
+		if (pos < 0) {
 			pos =0;
 			System.out.println("Position reset to 0!!");
+		}
+			
+		if (pos>100) {
+			pos-=die_number;
+			System.out.println("Exceeded Limit, Current position after change is : "+pos);
+		}
 		}
 
 	}
